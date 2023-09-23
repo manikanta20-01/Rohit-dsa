@@ -10,6 +10,7 @@ int main()
     cin >> first;
     cout << "Enter your second number" << endl;
     cin >> second;
+    cout << "Your output is : " << endl;
 
     if(first == second)
     {
@@ -27,3 +28,5 @@ int main()
         
     }
 }
+
+
