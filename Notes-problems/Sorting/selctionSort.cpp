@@ -3,14 +3,14 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {10,8,6,1,9};
+    int arr[] = {10,10,1,5,5};
     int size = sizeof(arr)/sizeof(arr[0]);
     for(int i = 0;i < size - 1;i++)
     {
         int index = i;
         for(int j = i+1;j < size;j++)
         {
-            if(arr[j] < arr[index])
+            if(arr[index] > arr[j])
                 index = j;
         }
         swap(arr[i],arr[index]);
