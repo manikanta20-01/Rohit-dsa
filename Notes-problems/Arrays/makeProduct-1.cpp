@@ -48,96 +48,128 @@
 
 
 // C++ implementation of the approach 
-#include <bits/stdc++.h> 
-using namespace std; 
+// #include <bits/stdc++.h> 
+// using namespace std; 
 
-// Function to return the minimum 
-// steps required 
-int MinStep(int a[], int n) 
-{ 
+// // Function to return the minimum 
+// // steps required 
+// int MinStep(int a[], int n) 
+// { 
 
-	// To store the count of 0s, positive 
-	// and negative numbers 
-	int positive = 0, 
-		negative = 0, 
-		zero = 0; 
+// 	// To store the count of 0s, positive 
+// 	// and negative numbers 
+// 	int positive = 0, 
+// 		negative = 0, 
+// 		zero = 0; 
 
-	// To store the ans 
-	int step = 0; 
+// 	// To store the ans 
+// 	int step = 0; 
 
-	for (int i = 0; i < n; i++) { 
+// 	for (int i = 0; i < n; i++) { 
 
-		// If array element is 
-		// equal to 0 
-		if (a[i] == 0) { 
-			zero++; 
-		} 
+// 		// If array element is 
+// 		// equal to 0 
+// 		if (a[i] == 0) { 
+// 			zero++; 
+// 		} 
 
-		// If array element is 
-		// a negative number 
-		else if (a[i] < 0) { 
-			negative++; 
+// 		// If array element is 
+// 		// a negative number 
+// 		else if (a[i] < 0) { 
+// 			negative++; 
 
-			// Extra cost needed 
-			// to make it -1 
-			step = step + (-1 - a[i]); 
-		} 
+// 			// Extra cost needed 
+// 			// to make it -1 
+// 			step = step + (-1 - a[i]); 
+// 		} 
 
-		// If array element is 
-		// a positive number 
-		else { 
-			positive++; 
+// 		// If array element is 
+// 		// a positive number 
+// 		else { 
+// 			positive++; 
 
-			// Extra cost needed 
-			// to make it 1 
-			step = step + (a[i] - 1); 
-		} 
-	} 
+// 			// Extra cost needed 
+// 			// to make it 1 
+// 			step = step + (a[i] - 1); 
+// 		} 
+// 	} 
 
-	// Now the array will 
-	// have -1, 0 and 1 only 
-	if (negative % 2 == 0) { 
+// 	// Now the array will 
+// 	// have -1, 0 and 1 only 
+// 	if (negative % 2 == 0) { 
 
-		// As count of negative is even 
-		// so we will change all 0 to 1 
-		// total cost here will be 
-		// count of 0s 
-		step = step + zero; 
-	} 
-	else { 
+// 		// As count of negative is even 
+// 		// so we will change all 0 to 1 
+// 		// total cost here will be 
+// 		// count of 0s 
+// 		step = step + zero; 
+// 	} 
+// 	else { 
 
-		// If there are zeroes present 
-		// in the array 
-		if (zero > 0) { 
+// 		// If there are zeroes present 
+// 		// in the array 
+// 		if (zero > 0) { 
 
-			// Change one zero to -1 
-			// and rest of them to 1 
-			// Total cost here will 
-			// be count of '0' 
-			step = step + zero; 
-		} 
+// 			// Change one zero to -1 
+// 			// and rest of them to 1 
+// 			// Total cost here will 
+// 			// be count of '0' 
+// 			step = step + zero; 
+// 		} 
 
-		// If there are no zeros in the array 
-		else { 
+// 		// If there are no zeros in the array 
+// 		else { 
 
-			// As no 0s are available so we 
-			// have to change one -1 to 1 
-			// which will cost 2 to 
-			// change -1 to 1 
-			step = step + 2; 
-		} 
-	} 
+// 			// As no 0s are available so we 
+// 			// have to change one -1 to 1 
+// 			// which will cost 2 to 
+// 			// change -1 to 1 
+// 			step = step + 2; 
+// 		} 
+// 	} 
 
-	return step; 
-} 
+// 	return step; 
+// } 
 
-// Driver code 
-int main() 
-{ 
-	int a[] = {6,4,2,-5}; 
-	int n = sizeof(a) / sizeof(a[0]); 
+// // Driver code 
+// int main() 
+// { 
+// 	int a[] = {6,4,2,-5}; 
+// 	int n = sizeof(a) / sizeof(a[0]); 
 
-	cout << MinStep(a, n); 
+// 	cout << MinStep(a, n); 
 
-	return 0; 
-} 
+// 	return 0; 
+// } 
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[] = {6, 4, 2, -5};
+    int num = sizeof(arr) / sizeof(arr[0]);
+
+    int total_steps = 0;
+
+    for (int i = 0; i < num; i++)
+    {
+        if (arr[i] > 0)
+        {
+            total_steps += (arr[i] - 1); // Steps needed to make a positive number 1
+        }
+        else if (arr[i] < 0)
+        {
+            total_steps += (-arr[i] - 1); // Steps needed to make a negative number -1
+        }
+        else
+        {
+            total_steps += 1; // One step to make zero 1
+        }
+    }
+
+    cout << "Total steps: " << total_steps << endl;
+
+    return 0;
+}
