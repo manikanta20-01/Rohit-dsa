@@ -17,6 +17,5 @@ int main()
     swapping(&first,&second);
 
     cout << first << " " << second;
-
-
 }
+
