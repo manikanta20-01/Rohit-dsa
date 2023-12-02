@@ -101,6 +101,6 @@ Day - 22
 
 ## Contact
 For any queries or assistance related to this project, feel free to contact:
-- Project Owner: [Your Name]
+- Project Owner: [manikanta]
 - Mentor: Rohit Negi
-- Email: [Your Email Address]
+- Email: [manikantanamo@gmail.com]
