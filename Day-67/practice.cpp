@@ -5,15 +5,15 @@ int main()
 {
     //int variable is assigned to heap
 
-    int *ptr = new int;
-    *ptr = 5;
-    cout << *ptr << endl;
+    int *intptr = new int;
+    *intptr = 5;
+    cout << *intptr << endl;
 
 //    float variable is assigned to heap
 
-    float *ptr1 = new float;
-    *ptr1 = 5.5;
-    cout << *ptr1 << endl;
+    float *floatptr = new float;
+    *floatptr = 5.5;
+    cout << *floatptr << endl;
 
    int n;
    cout << "Enter the size of array: " << endl;
@@ -37,8 +37,8 @@ int main()
 
    // delete the allocated memory in Heap
 
-   delete ptr;
-   delete ptr1;
+   delete intptr;
+   delete floatptr;
    delete[] p;
    
 }
