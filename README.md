@@ -3,9 +3,7 @@
 ## Project Overview
 This project is focused on learning Data Structures and Algorithms (DSA) along with C++. The primary mentor for this project is Rohit Negi.
 
-Day - 22
-
-## Syllabus
+## Syllabus -
 
 ### Data Structures
 1. **Arrays**
