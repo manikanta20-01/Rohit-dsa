@@ -229,9 +229,58 @@ For any queries or assistance related to this project, feel free to contact:
 
 # Linked list
 
+### Array vs Linked List
+
+![alt text](img/image.png)
+
+- Array allocates the memory at contiguous location but linked list are different.
+
+- Linked list is a combination of data and it's next node address called node 
+
+![alt text](img/LL-2.png)
+
+
+## create a linked list 
+
+```
+#include <iostream>
+using namespace std;
+
+class Node 
+{
+    public:
+    int data;
+    Node *next;
+    
+    Node(int value)
+    {
+        data = value;
+        next = NULL;
+    }
+};
+
+int main()
+{
+    Node *Head;
+    Head = new Node(4);
+    
+    cout << Head->data << endl;
+    cout << Head->next << endl;
+
+    return 0;
+}
+```
+
+
 ## Insertion
 
 ### Insertion Head 
+
+![alt text](img/LL-4.png)
+![alt text](img/LL-5.png)
+![alt text](img/LL-6.png)
+
+
 
 ```
 class Node
@@ -289,11 +338,10 @@ int main ()
 }
 ```
 
-a^2 + b^2
 
-\(a^2 + b^2\)
-
+### Insertion End
 
 
-$a^2 + b^2$
+
+
 
