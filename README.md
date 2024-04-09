@@ -242,7 +242,7 @@ For any queries or assistance related to this project, feel free to contact:
 
 ## create a linked list 
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -282,7 +282,7 @@ int main()
 
 
 
-```
+```cpp
 class Node
 {
 public:
@@ -340,6 +340,82 @@ int main ()
 
 
 ### Insertion End
+![alt text](img/LL-7.png)
+
+- Step 1: IF PTR = NULL Write OVERFLOW
+    Go to Step 1
+   [END OF IF]
+- Step 2: SET NEW_NODE = PTR
+- Step 3: SET PTR = PTR - > NEXT
+- Step 4: SET NEW_NODE - > DATA = VAL
+- Step 5: SET NEW_NODE - > NEXT = NULL
+- Step 6: SET PTR = HEAD
+- Step 7: Repeat 
+- Step 8 while PTR - > NEXT != NULL
+- Step 8: SET PTR = PTR - > NEXT
+[END OF LOOP]
+- Step 9: SET PTR - > NEXT = NEW_NODE
+- Step 10: EXIT
+
+```cpp
+
+#include <iostream>
+using namespace std;
+class Node
+{
+public:
+  int data;
+  Node *next;
+    Node (int value)
+  {
+	data = value;
+	next = NULL;
+  }
+
+};
+
+int
+main ()
+{
+  Node *Head, *Tail;
+  Tail = Head = NULL;
+
+  int arr[] = { 2, 4, 6, 8, 10 };
+  for (int i = 0; i < 5; i++)
+	{
+
+	  // IF LL IS EMPTY
+
+	  if (Head == NULL)
+		{
+		  Head = new Node (arr[i]);
+		  Tail = Head;
+
+		}
+	  // IF LL IS NOT EMPTY
+	  else
+		{
+		  Tail->next = new Node (arr[i]);
+		  Tail = Tail->next;
+
+
+		}
+	}
+  Node *temp;
+  temp = Head;
+
+  // print the LL
+
+  while (temp)
+	{
+	  cout << temp->data << " ";
+	  temp = temp->next;
+
+	}
+
+  return 0;
+}
+```
 
 
 
